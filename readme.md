@@ -24,4 +24,19 @@
 #React component
 -types of functions
 -component composition
--
+
+
+#planned design for bite bazaar
+ * Header
+ *  -logo
+ *  -nav items
+ * Body
+ *  -search
+ *  -carts container
+ *      -restaurantCard
+ * footer
+ *  -copyrights
+ *  -address
+ *  -contact
+
+ 
