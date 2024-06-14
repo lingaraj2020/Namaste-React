@@ -39,4 +39,7 @@
  *  -address
  *  -contact
 
- 
+ Two types of export/imports
+
+ -default export/import
+ -named export/import 
