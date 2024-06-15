@@ -40,7 +40,7 @@
   margin: 5px;
   padding: 5px;
   width: 250px;
-  height: 450px;
+  height: 460px;
 }
 .res-card:hover {
   border: 1px solid black;
@@ -52,4 +52,22 @@
 }
 .filter-btn{
     margin: 10px;
+}
+
+.shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  padding-left: 70px;
+}
+.shimmer-card{
+  margin: 5px;
+  padding: 5px;
+  height: 400px;
+  width: 250px;
+  background-color: #f0f0f0;
+}
+.login-btn{
+  padding: 0 15px;
+  cursor: pointer;
 }
