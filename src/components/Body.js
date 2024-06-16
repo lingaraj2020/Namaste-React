@@ -8,7 +8,7 @@ const Body = () => {
 
   const [serachText, setSearchText] = useState("");
 
-  useEffect(() => {
+  useEffect(() => { 
     fetchData();
   }, []);
 
