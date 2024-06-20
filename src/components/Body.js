@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [ListofRestaurant, setListofRestaurant] = useState([]);
@@ -8,7 +9,7 @@ const Body = () => {
 
   const [serachText, setSearchText] = useState("");
 
-  useEffect(() => { 
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -23,8 +24,9 @@ const Body = () => {
     setFiltredRestaurant(json?.data?.cards?.slice(3));
   };
 
-
-  return  (ListofRestaurant.length===0?(<Shimmer/>):
+  return ListofRestaurant.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
@@ -62,10 +64,11 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard
-            key={restaurant.card.card.info.id}
-            resData={restaurant}
-          />
+          <Link key={restaurant.card.card.info.id} to={"/restaurants/" + restaurant.card.card.info.id}>
+            <RestaurantCard
+              resData={restaurant}
+            />
+          </Link>
         ))}
       </div>
     </div>

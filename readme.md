@@ -43,3 +43,10 @@
 
  -default export/import
  -named export/import 
+
+
+ # 2 types of routings in web app
+ -client side routing
+ -server side routing
+
+ 
