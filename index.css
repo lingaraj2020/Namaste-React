@@ -11,6 +11,7 @@
 .nav-items {
   padding: 0px 20px;
 }
+
 .nav-items > ul {
   display: flex;
   font-size: 20px;
@@ -21,7 +22,13 @@
   margin: 10px;
   cursor: pointer;
 }
-
+.nav-items a {
+  text-decoration: none;
+}
+.nav-items a:hover {
+  color: rgb(19, 19, 63);
+  font-size: 1.3rem;
+}
 .top-layer body {
   display: flex;
 }
