@@ -14,20 +14,20 @@ const Header = () => {
   // },[])
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-slate-100 border-slate-950">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="app-logo"></img>
+        <img className="w-32" src={LOGO_URL} alt="app-logo"></img>
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online status: {onlinestatus ? " ✅":" 🛑"}</li>
-          <li><Link to="/">Home</Link> </li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact Us</Link> </li>
-          <li><Link to="/cart">Cart</Link></li>
-          <li><Link to="/grocery">Grocery</Link></li>
+      <div className="flex items-center">
+        <ul className="flex text-xl">
+          <li className="p-2 m-2 cursor-pointer">Online status: {onlinestatus ? " ✅":" 🛑"}</li>
+          <li className="p-2 m-2 cursor-pointer"><Link to="/">Home</Link> </li>
+          <li className="p-2 m-2 cursor-pointer"><Link to="/about">About Us</Link></li>
+          <li className="p-2 m-2 cursor-pointer"><Link to="/contact">Contact Us</Link> </li>
+          <li className="p-2 m-2 cursor-pointer"><Link to="/cart">Cart</Link></li>
+          <li className="p-2 m-2 cursor-pointer"><Link to="/grocery">Grocery</Link></li>
           <button
-            className="login-btn"
+            className="p-2 m-2 bg-slate-400 rounded-md px-2"
             onClick={() => {
               btnName==="Login"?setBtnName("Logout"):setBtnName("Login")
             }}
