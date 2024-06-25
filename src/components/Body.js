@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromoted } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "../components/Shimmer";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ const Body = () => {
   const [filteredRestaurant, setFiltredRestaurant] = useState([]);
 
   const [serachText, setSearchText] = useState("");
+  // console.log("rendered",ListofRestaurant);
 
   useEffect(() => {
     fetchData();
@@ -19,11 +20,13 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&collection=83649&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
     );
     const json = await data.json();
-
     //optional chaining
+    // console.log(json?.data);
     setListofRestaurant(json?.data?.cards?.slice(3));
     setFiltredRestaurant(json?.data?.cards?.slice(3));
   };
+
+  const PromotedRestaurant=withPromoted(RestaurantCard);
 
   const onlinestatus = useOnlineStatus();
   if (onlinestatus == false)
@@ -82,6 +85,7 @@ const Body = () => {
             key={restaurant.card.card.info.id}
             to={"/restaurants/" + restaurant.card.card.info.id}
           >
+            {/* {restaurant.card.card.info.promoted?(<PromotedRestaurant resData={restaurant}/>):(<RestaurantCard resData={restaurant}/>)} */}
             <RestaurantCard resData={restaurant} />
           </Link>
         ))}

@@ -14,18 +14,18 @@ const Header = () => {
   // },[])
 
   return (
-    <div className="flex justify-between bg-slate-100 border-slate-950">
+    <div className="flex justify-between bg-yellow-100 border-slate-950 sm:bg-slate-100">
       <div className="logo-container">
         <img className="w-32" src={LOGO_URL} alt="app-logo"></img>
       </div>
       <div className="flex items-center">
         <ul className="flex text-xl">
           <li className="p-2 m-2 cursor-pointer">Online status: {onlinestatus ? " ✅":" 🛑"}</li>
-          <li className="p-2 m-2 cursor-pointer"><Link to="/">Home</Link> </li>
-          <li className="p-2 m-2 cursor-pointer"><Link to="/about">About Us</Link></li>
-          <li className="p-2 m-2 cursor-pointer"><Link to="/contact">Contact Us</Link> </li>
-          <li className="p-2 m-2 cursor-pointer"><Link to="/cart">Cart</Link></li>
-          <li className="p-2 m-2 cursor-pointer"><Link to="/grocery">Grocery</Link></li>
+          <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/">Home</Link> </li>
+          <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/about">About Us</Link></li>
+          <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/contact">Contact</Link> </li>
+          <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/cart">Cart</Link></li>
+          <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/grocery">Grocery</Link></li>
           <button
             className="p-2 m-2 bg-slate-400 rounded-md px-2"
             onClick={() => {
