@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -22,7 +23,7 @@ const Header = () => {
         <ul className="flex text-xl">
           <li className="p-2 m-2 cursor-pointer">Online status: {onlinestatus ? " ✅":" 🛑"}</li>
           <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/">Home</Link> </li>
-          <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/about">About Us</Link></li>
+          <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/about">About</Link></li>
           <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/contact">Contact</Link> </li>
           <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/cart">Cart</Link></li>
           <li className="p-2 m-2 cursor-pointer hover:font-semibold"><Link to="/grocery">Grocery</Link></li>

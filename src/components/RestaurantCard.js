@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+
   const {
     name,
     cuisines,
@@ -11,7 +14,7 @@ const RestaurantCard = (props) => {
     sla,
   } = resData?.card?.card?.info;
   return (
-    <div className="m-2 h-[400px] p-2 w-[250px] rounded-md bg-gray-200 hover:bg-gray-100">
+    <div className="m-2 h-[420px] p-2 w-[250px] rounded-md bg-gray-200 hover:bg-gray-100">
       <img
         className="rounded-lg h-[200px] w-[240px]"
         alt="res-photo"

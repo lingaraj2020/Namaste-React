@@ -3,8 +3,8 @@
 const Contact = () => {
   return (
     <div>
-        <h1>Contact</h1>
-        <h2>Welcome to contact page!</h2>
+        <h2 className="mx-8 font-bold">Welcome to contact page!</h2>
+        <h1 className="mx-4 p-4 font-mono">Contact: lingarajhonasani2020@gmail.com</h1>
     </div>
   )
 }

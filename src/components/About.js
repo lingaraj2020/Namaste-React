@@ -14,8 +14,6 @@ class About extends React.Component{
     render(){
         console.log("parent render");
         return <div>
-        <h1>About</h1>
-        <h2>Welcome to About page!</h2>
         <UserClass name={"Lingaraj H"} location={"Huballi"}/>
         {/* <UserClass name={"Akshay saini"} location={"Dehadur"}/> */}
     </div>
