@@ -9,15 +9,19 @@ import About from "./components/About";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
-const Grocery=lazy(()=>import("./components/Grocery")) ;
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet/>
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 
@@ -25,11 +29,11 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error/>,
-    children:[
+    errorElement: <Error />,
+    children: [
       {
-        path:"/",
-        element:<Body/>
+        path: "/",
+        element: <Body />,
       },
       {
         path: "/about",
@@ -45,15 +49,18 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Suspense fallback={<Shimmer/>}><Grocery/></Suspense> ,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
-        path:"/restaurants/:resId",
-        element:<RestaurantMenu/>
-      }
-    ]
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
+      },
+    ],
   },
-  
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
