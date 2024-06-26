@@ -12,6 +12,7 @@ const Header = () => {
 
   //subscring the store using selector
   const cartItems = useSelector((store)=>store.cart.items);
+  // console.log(cartItems);
 
   //if no depedency array useeffect will call on every render
   //if depedency array is empty- useeffect will call on intial render(just once)
