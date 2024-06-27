@@ -14,14 +14,14 @@ const RestaurantCard = (props) => {
     sla,
   } = resData?.card?.card?.info;
   return (
-    <div className="m-2 h-[420px] p-2 w-[250px] rounded-md bg-gray-200 hover:bg-gray-100">
+    <div className="m-2 h-[400px] p-2 w-[250px] rounded-md bg-gray-200 hover:bg-gray-100">
       <img
         className="rounded-lg h-[200px] w-[240px]"
         alt="res-photo"
         src={CDN_URL + cloudinaryImageId}
       ></img>
       <h3 className="py-2 text-lg font-bold">{name}</h3>
-      <h4>{cuisines.join(",")}</h4>
+      <h4 className="truncate">{cuisines.join(",")}</h4>
       <h4>{avgRating} stars</h4>
       <h4>{costForTwo}</h4>
       <h4>{sla?.deliveryTime} Minutes</h4>
